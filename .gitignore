@@ -1,0 +1,6 @@
+./venv_plds/
+./app/data/
+./app/log/
+./app/model/
+./app/src/__pycache__
+./app/output/
