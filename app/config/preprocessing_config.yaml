@@ -1,0 +1,7 @@
+lowercase : True
+decontract : True
+remove_num : True
+remove_punc : True
+remove_space : True
+remove_stop : True
+out_path : "../output/"

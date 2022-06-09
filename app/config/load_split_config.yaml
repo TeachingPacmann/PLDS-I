@@ -1,0 +1,6 @@
+file_loc : '../data/comments_data.csv'
+x_col : 'comment_text'
+y_col : 'toxic' 
+stratify : 'toxic'
+out_path : "../output/"
+test_size : 0.2

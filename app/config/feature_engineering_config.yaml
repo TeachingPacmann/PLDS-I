@@ -1,0 +1,3 @@
+min_df : 0.01 
+vectorizer_file : 'vectorizer' 
+out_path : '../output/'
