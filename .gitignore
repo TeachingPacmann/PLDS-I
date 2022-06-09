@@ -1,6 +1,6 @@
 venv_plds/
-app/data/
-app/log/
-app/model/
-app/output/
+app/data/*
+app/log/*
+app/model/*
+app/output/*
 app/src/__pycache__
