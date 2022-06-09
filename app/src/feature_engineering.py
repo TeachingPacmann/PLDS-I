@@ -68,7 +68,7 @@ def vectorize_tfidf(df_in, params, vectorizer=None):
         vectorized = vectorizer.transform(df['comment_text'])
     
     vectorized_df = pd.DataFrame(vectorized.toarray(), 
-                                 columns=vectorizer.get_feature_names(), 
+                                 columns=vectorizer.get_feature_names_out(), 
                                  index = df.index)
     df_non_sentence = df.drop(['comment_text'],axis=1)
     df_final = pd.concat([vectorized_df, df_non_sentence],axis=1)
