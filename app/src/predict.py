@@ -1,8 +1,9 @@
-import yaml
 import joblib
 import pandas as pd
 from preprocessing import preprocess
 from feature_engineering import vectorize_tfidf
+
+from utils import read_yaml
 
 PREPROCESSING_CONFIG_PATH = "../config/preprocessing_config.yaml"
 FEATURE_ENGINEERING_CONFIG_PATH = "../config/feature_engineering_config.yaml"
@@ -10,22 +11,6 @@ FEATURE_ENGINEERING_CONFIG_PATH = "../config/feature_engineering_config.yaml"
 tfidf_vect = joblib.load("../output/vectorizer.pkl")
 model = joblib.load('../model/mantab_model.pkl')
 threshold = joblib.load('../model/threshold.pkl')
-
-def read_yaml(yaml_path):
-    """
-    Loader for yaml file.
-    
-    Args:
-    - yaml_path(string): Path to yaml file.
-    
-    Returns:
-    - params(dictionary): Dict ver of yaml file.
-    """
-    
-    with open(yaml_path, "r") as stream:
-        params = yaml.safe_load(stream)
-    
-    return params 
 
 def df_constructor(text, id=0):
     df = pd.DataFrame(data={'id':[id], 'comment_text':[text]})

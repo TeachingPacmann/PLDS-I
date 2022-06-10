@@ -4,10 +4,10 @@ import joblib
 
 tqdm.pandas()
 
-import yaml
 import preprocessing
 import feature_engineering
 from fastapi import FastAPI, Form, Header, HTTPException
+from utils import read_yaml
 
 PREPROCESSING_CONFIG_PATH = "../config/preprocessing_config.yaml"
 FEATURE_ENGINEERING_CONFIG_PATH = "../config/feature_engineering_config.yaml"
@@ -17,22 +17,6 @@ model = joblib.load('../model/mantab_model.pkl')
 threshold = joblib.load('../model/threshold.pkl')
 
 app = FastAPI()
-
-def read_yaml(yaml_path):
-    """
-    Loader for yaml file.
-    
-    Args:
-    - yaml_path(string): Path to yaml file.
-    
-    Returns:
-    - params(dictionary): Dict ver of yaml file.
-    """
-    
-    with open(yaml_path, "r") as stream:
-        params = yaml.safe_load(stream)
-    
-    return params 
 
 params_preprocess = read_yaml(PREPROCESSING_CONFIG_PATH)
 param_vec = read_yaml(FEATURE_ENGINEERING_CONFIG_PATH)

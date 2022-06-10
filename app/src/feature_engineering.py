@@ -5,25 +5,9 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 
 tqdm.pandas()
 
-import yaml
+from utils import read_yaml
 
 FEATURE_ENGINEERING_CONFIG_PATH = "../config/feature_engineering_config.yaml"
-
-def read_yaml(yaml_path):
-    """
-    Loader for yaml file.
-    
-    Args:
-    - yaml_path(string): Path to yaml file.
-    
-    Returns:
-    - params(dictionary): Dict ver of yaml file.
-    """
-    
-    with open(yaml_path, "r") as stream:
-        params = yaml.safe_load(stream)
-    
-    return params 
 
 def load_preprocessed_data(params):
     """
