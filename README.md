@@ -22,5 +22,10 @@ cd app/src
 gunicorn app.src.api:app --worker-class uvicorn.workers.UvicornWorker
 ```
 
-## Referencs
+## Dataset
+- https://drive.google.com/file/d/1f-k3GKloJwZpb9Men9RzZFz20AwBX9qb/view?usp=sharing
+- https://drive.google.com/file/d/1bPnGM2cri3hPlYbmzJCeWZEvSPUnH77F/view?usp=sharing -> small
+
+
+## References
 - https://fastapi.tiangolo.com/
